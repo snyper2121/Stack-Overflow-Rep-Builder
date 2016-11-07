@@ -117,15 +117,8 @@ $(document).ready( function() {
 		.done(function(result){ //this waits for the ajax to return with a succesful promise object
 		console.log(result.items);
 
-		$.each(result.items, function(i, item) {
-			var question = showQuestion(item);
-			$('.results').append(question);
-		});
 
-		for (var i = 0; i < result.item; i++){
-
-		}
-	})
+		})
 
 	.fail(function(jqXHR, error){ //this waits for the ajax to return with an error promise object
 		console.log(error);
