@@ -7,19 +7,28 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 
-<script type="x-tmpl-mustache" id="userTemplate">
-	<img src={{user.profile_image}} />
-	<a href={{ user.link }}>
-  		<h2> {{ user.display_name}} </h2>
-  	</a>
-  <p> Score: {{ score }} UserNo.: {{ user }} </p>
+<script type="x-tmpl-mustache" id="user-template">
+  <img src='{{user.profile_image}}' />
+  <a href='{{ user.link }}'>
+  	<h2> {{ user.display_name}} </h2>
+  </a>
+  <p> Score: {{ score }}   UserNo.: {{ user.user_id }} </p>
 	<p> Post Count: {{ post_count }} </p>
   
-  <div class={{ type }}>
-  	<p>{{ content }}</p>
-  </div>
+</script>
+
+<script type="x-tmpl-mustache" id="user-array">
+	{{#items}}  
+		<img src='{{user.profile_image}}' />
+  		<a href='{{ user.link }}'>
+  			<h2> {{ user.display_name}} </h2>
+  		</a>
+  		<p> Score: {{ score }}   UserNo.: {{ user.user_id }} </p>
+		<p> Post Count: {{ post_count }} </p>
+	{{/items}}
 
 </script>
+
 
 <body>
 	<div class="container">
@@ -61,9 +70,13 @@
 			<dt>Asker</dt>
 				<dd class="asker"></dd>
 		</dl>
+
 		<div class="error">
 			<p>Uh-oh! Something went wrong with your request. Here's what we know:</p>
 		</div>
+	</div>
+	<div id="answers-results">
+			
 	</div>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="js/app.js"></script>

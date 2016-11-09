@@ -115,7 +115,18 @@ $(document).ready( function() {
 
 		$.ajax(requestOptions)
 		.done(function(result){ //this waits for the ajax to return with a succesful promise object
-		console.log(result.items);
+		console.log(result.items[0]);
+
+		var userTemplate = $('#user-template').html();//Retrieve template from DOM
+		var templateWithContext = Mustache.render(userTemplate, result.items[0]);//Pass information to template
+			console.log(templateWithContext);
+		document.getElementById('answers-results').innerHTML = templateWithContext;//Write the information from the template to the DOM
+
+
+		var userArray = $('#user-array').html();//Retrieve template from DOM
+		var templateWithContextForArray = Mustache.render(userArray, result);//Pass info to template
+			console.log(templateWithContextForArray);
+		document.getElementById('answers-results').innerHTML = templateWithContextForArray//Write the information from the template to the DOM
 
 
 		})
@@ -124,7 +135,8 @@ $(document).ready( function() {
 		console.log(error);
 	});
 
-	}
+
+}
 
 
 
