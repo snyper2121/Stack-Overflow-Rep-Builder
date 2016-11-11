@@ -18,13 +18,15 @@
 </script>
 
 <script type="x-tmpl-mustache" id="user-array">
-	{{#items}}  
+	{{#items}} 
+	<div id="results-divs"> 
 		<img src='{{user.profile_image}}' />
   		<a href='{{ user.link }}'>
   			<h2> {{ user.display_name}} </h2>
   		</a>
   		<p> Score: {{ score }}   UserNo.: {{ user.user_id }} </p>
 		<p> Post Count: {{ post_count }} </p>
+	</div>
 	{{/items}}
 
 </script>

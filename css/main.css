@@ -49,3 +49,11 @@
 #answers-results {
 	text-align: center;
 }
+
+#results-divs {
+
+  float: left;
+  width: 200px;
+  margin: 1em;
+
+}
